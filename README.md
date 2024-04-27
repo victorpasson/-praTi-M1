@@ -12,8 +12,8 @@ Repositório com a resolução da primeira lista de exercícios do Módulo 1. Os
 # Definição
 
 - Escolhendo uma opção de 1 a 16 executa-se a resolução do exercício proposto;
-- Escolhendo a opção 17 executa a verificação:
-  - A tela de verificação abre a posibilidade da escolha dos exercícios: de 1 a 16;
+- Escolhendo a opção 17 executa-se a janela de Verificação:
+  - A tela de verificação abre a posibilidade de escolha de exercício: 1 a 16;
   - Escolhendo de 1 a 16 executa-se a implementação interna de cada exercício;
   - Escolhendo a opção 0 fecha-se a verificação.
 - Escolhendo a opção 0 fecha-se o programa.
