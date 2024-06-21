@@ -1,15 +1,31 @@
 const prompt = require('prompt-sync')();
 
-module.exports = function() {
-    let nota1 =  parseFloat(prompt('Digite a primeira nota: '));
-    let nota2 =  parseFloat(prompt('Digite a segunda nota: '));
+console.log("Escolha sua jogada:\n\n0 - Pedra;\n1 - Papel;\n2 - Tesoura;\n")
+let jogador = parseInt(prompt("Escolha: "));
+let computador = Math.floor(Math.random() * 3);
+let escolhas = ["Pedra", "Papel", "Tesoura"];
+let resultado;
 
-    let media = (nota1 + nota2) / 2;
-
-    if (media >= 6) {
-        return console.log('PARABENS! Você foi aprovado!');
-    } else {
-        return console.log('Você foi REPROVADO! Estude mais.');
+if (resultado){
+    if(jogador == computador){
+        resultado = "Empate";
+    }else if(jogador == 0 && computador == 1){
+        resultado = "Computador Venceu!"
+    }else if(jogador == 0 && computador == 2){
+        resultado = "Você Venceu!"
+    } else if(jogador == 1 && computador == 0){
+        resultado = "Você Venceu!"
+    } else if(jogador == 1 && computador == 2){
+        resultado = "Computador Venceu!"
+    } else if(jogador == 2 && computador == 0){
+        resultado = "Computador Venceu!"
+    } else if(jogador == 2 && computador == 1){
+        resultado = "Você Venceu!"
     }
 
+    console.log(`Sua escolha: ${escolhas[jogador]}.`);
+    console.log(`Computador : ${escolhas[computador]}.`);
+    console.log(`Resultado  : ${resultado}!`)
+}else {
+    console.log("Escolha um valor válido!")
 }

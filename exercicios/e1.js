@@ -1,13 +1,9 @@
 const prompt = require('prompt-sync')();
 
-function toFahrenheit() {
-    let celsius = parseFloat(prompt('Digite a temperatura em °C: '));
+let quantidade = parseInt(prompt("Digite a quantidade de cigarro fumados por dia: "));
 
-    let fahrenheit = (celsius * 9/5) + 32;
+let anos = parseInt(prompt("Digite por quantos anos você já fumou: "));
 
-    console.log(`A temperatura em Fahrenheit é ${fahrenheit}°F`);
+let dias_perdidos = (10 * quantidade * 365 * anos) / (60 * 24);
 
-    return fahrenheit;
-}
-
-module.exports = toFahrenheit;
+console.log(`Você já perdeu ${Math.floor(dias_perdidos)} dias de vida! Pare de Fumar!`);
