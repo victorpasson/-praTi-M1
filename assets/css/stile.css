@@ -120,11 +120,11 @@ section.carrossel h1 {
 
 section.carrossel main {
     box-sizing: content-box;
+    text-align: center;
 }
 
 section.carrossel main article {
-    width: 340px;
-    height: 540px;
+    width: 23%;
     text-align: center;
     color: #726E6E;
     box-sizing: border-box;
@@ -137,7 +137,7 @@ section.carrossel main article {
 section.carrossel main article h2 {
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 36px;
+    font-size: 26px;
     color: #141D37;
     margin-bottom: 32px;
 }
@@ -146,6 +146,16 @@ section.carrossel main article i {
     font-size: 98px;
     color: #6D6D6D;
     margin-bottom: 24px;
+}
+
+.back{
+    cursor: pointer;
+    float: left;
+}
+
+.next {
+    cursor: pointer;
+    float: right;
 }
 
 /* Newsletter */
@@ -260,3 +270,4 @@ footer section.direitos p {
     display: block;
     clear: both;
 }
+
