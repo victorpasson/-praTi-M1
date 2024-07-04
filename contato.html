@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crejo - Gestão Comercial</title>
+    <link href="assets/css/stile.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Crejo</h1>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/sobre.html">Sobre</a></li>
+                    <li><a href="/contato.html">Contato</a></li>
+                    <li><a class="cbutton" href="/">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Digite seu nome" required/></br>
+            <input type="email" placeholder="Digite seu email" required/></br>
+            <textarea placeholder="Mensagem" required></textarea></br>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <section class="endereco">
+            <h2>Localização</h2>
+            <p>Bora Bill - R. dos Memes, nº 77</p>
+            <p>Rap dos Memes, Youtube - BR</p>
+            <p>88997-766</p>
+            <p class="tel">Tel. +55 9 8877-6655</p>
+        </section>
+        <section class="vmenu">
+            <ul>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </section>
+        <section class="direitos">
+            <img src="./assets/images/logo.png"/ alt="logo">
+            <p>Todos os direitos reservados - 2024 &copy; Crejo</p>
+        </section>
+        <span class="clear"></span>
+    </footer>
+    <script>
+        document.querySelector("form").addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                let p = document.createElement("p");
+                p.innerText = "Enviado com sucesso!";
+                p.style.marginBottom = "24px";
+                document.querySelector("form").prepend(p);
+                document.querySelector("form input[type=email]").disabled = true;
+                document.querySelector("form input[type=text]").disabled = true;
+                document.querySelector("textarea").disabled = true;
+                document.querySelector("button").disabled = true;
+
+            })
+    </script>
+</body>
+</html>

@@ -29,6 +29,18 @@ a {
     text-decoration: none;
 }
 
+@keyframes slidein {
+    from{
+        transform: scale(0.8);
+        opacity: 0%;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
 /* Header */
 header{
     height: 96px;
@@ -125,6 +137,8 @@ section.carrossel main {
 
 section.carrossel main article {
     width: 23%;
+    min-width: 300px;
+    min-height: 600px;
     text-align: center;
     color: #726E6E;
     box-sizing: border-box;
@@ -132,6 +146,7 @@ section.carrossel main article {
     padding: 30px;
     margin: 0 32px;
     display: inline-block;
+    animation: slidein 0.3s ease 0s 1 alternate both;
 }
 
 section.carrossel main article h2 {
@@ -148,14 +163,24 @@ section.carrossel main article i {
     margin-bottom: 24px;
 }
 
+section.carrossel > i {
+    font-size: 48px;
+}
+
+section.carrossel > i:hover {
+    font-size: 50px;
+}
+
 .back{
     cursor: pointer;
     float: left;
+    margin-top: 300px;
 }
 
 .next {
     cursor: pointer;
     float: right;
+    margin-top: 300px;
 }
 
 /* Newsletter */
@@ -271,3 +296,66 @@ footer section.direitos p {
     clear: both;
 }
 
+/* Main Geral */
+body > main > h2 {
+    font-size: 36px;
+    color: #141D37;
+    margin-bottom: 48px;
+    margin-top: 64px;
+}
+
+body > main > p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+body > main > p:last-child {
+    margin-bottom: 128px;
+}
+
+body > main > form {
+    text-align: center;
+    margin-bottom: 128px;
+}
+
+body > main > form > input{
+    width: 600px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #726E6E;
+    background-color: #eeecec;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 3px solid #141D37;
+    margin-bottom: 10px;
+}
+
+body > main > form > textarea {
+    width: 600px;
+    height: 150px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #726E6E;
+    background-color: #eeecec;
+    padding: 16px 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 3px solid #141D37;
+    margin-bottom: 10px;
+}
+
+body > main > form > button {
+    background-color: #EB0505;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+body>main>form>button:hover{
+    font-size: 24px;
+}

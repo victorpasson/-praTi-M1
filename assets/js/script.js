@@ -20,6 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         changeCarrossel(count, articles);
     })
+
+    document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let p = document.createElement("p");
+        p.innerText = "Enviado com sucesso!";
+        p.style.marginBottom = "24px";
+        document.querySelector("form").prepend(p);
+        document.querySelector("form input[type=email]").disabled = true;
+        document.querySelector("form input[type=submit]").disabled = true;
+        document.querySelector("form input[type=text]").disabled = true;
+        document.querySelector("form textarea").disabled = true;
+
+    })
 })
 
 function changeCarrossel(contador, articles){
