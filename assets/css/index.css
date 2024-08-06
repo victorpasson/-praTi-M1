@@ -321,12 +321,16 @@ body{
         gap: 30px;
     }
 
-    article.carrossel div.c-container div.c-conteudo article {
-        min-width: 350px;
+    article.carrossel div.c-container{
+        padding: 15px 100px;
     }
-
+    
     article.carrossel div.c-container div.c-conteudo {
         gap:50px
+    }
+    
+    article.carrossel div.c-container div.c-conteudo article {
+        min-width: 350px;
     }
 
     footer {
