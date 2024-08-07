@@ -34,6 +34,23 @@ body{
         transition: background-color 0.2s;
     }
 
+    main > h2{
+        color: #141D37;
+        font-size: 42px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+
+    main > p {
+        font-size: 18px;
+        padding: 0 50px;
+        text-align: justify;
+    }
+
+    main {
+        margin-bottom: 64px;
+    }
+
     /* Navegação */
 
     header{
@@ -52,6 +69,10 @@ body{
 
     .menu-hamburguer {
         height: 300px;
+    }
+
+    .display {
+        visibility: hidden;
     }
 
     header > h1 {
@@ -149,11 +170,11 @@ body{
     /* Carrossel */
     article.carrossel div.c-container {
         display: flex;
-        justify-content:center;
+        justify-content: space-between;
         align-items: center;
-        width: calc(100vw - 15px);
+        width: calc(100vw);
         box-sizing: border-box;
-        padding: 15px;
+
     }
 
     article.carrossel div.c-container span {
@@ -163,6 +184,7 @@ body{
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        margin: 0 5px;
     }
 
     article.carrossel div.c-container span:hover {
@@ -214,6 +236,11 @@ body{
         margin-bottom: 64px;
     }
 
+    article.newsletter span{
+        width: 100%;
+        text-align: center;
+    }
+
     article.newsletter form {
         display: flex;
         justify-content: center;
@@ -221,24 +248,35 @@ body{
     }
 
     article.newsletter form input {
-        width: 250px;
+        box-sizing: border-box;
+        width: 50%;
+        max-width: 400px;
         color: #757575;
         padding: 12px;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
         background-color: #D9D9D9;
         border: none;
         border-radius: 7px 0 0 7px;
+        height: 56px;
     }
 
     article.newsletter form input:focus {
         outline: none;
     }
 
-    article.newsletter form button.button {
+    article.newsletter form button {
+        box-sizing: border-box;
         box-shadow: none;
         cursor: pointer;
         border-radius: 0 7px 7px 0;
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #EB0505;
+        border: none;
+        height: 56px;
     }
 
     /* Footer */
@@ -264,7 +302,8 @@ body{
 
     footer div.localizacao p {
         font-weight: lighter;
-        line-height: 5px;
+        line-height: 20px;
+        margin: 0 0 7px 0;
     }
 
     footer div.localizacao p.tel{
@@ -273,6 +312,7 @@ body{
 
     footer div.direitos {
         grid-area: log;
+        margin-left: 10px;
     }
 
     footer div.direitos img {
@@ -302,9 +342,70 @@ body{
         font-size: 18px;
         line-height: 30px;
     }
+
+    /* Contato */
+    main div.pcontato {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main div.pcontato form{
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    main div.pcontato form input {
+        box-sizing: border-box;
+        color: #757575;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 7px;
+        height: 56px;
+    }
+
+    main div.pcontato form textarea {
+        box-sizing: border-box;
+        color: #757575;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 7px;
+        height: 150px;
+    }
+
+    main div.pcontato form button {
+        box-sizing: border-box;
+        box-shadow: none;
+        cursor: pointer;
+        border-radius: 7px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #EB0505;
+        border: none;
+        height: 56px;
+    }
 }
 
 @media screen and (min-width: 768px) {
+    .display{
+        visibility: visible;
+    }
+
+    .menu-hamburguer {
+        height: 96px;
+    }
+
     header>span {
         display: none;
     }
@@ -336,6 +437,14 @@ body{
     footer {
         grid-template-areas:
         "loc menu log";
+    }
+
+    main div.pcontato {
+        padding: 0 64px;
+    }
+
+    main div.pcontato form {
+        width: 900px;
     }
 
 }
