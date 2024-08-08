@@ -358,6 +358,10 @@ body{
         width: 100%;
     }
 
+    main div.pcontato form span {
+        text-align: center;
+    }
+
     main div.pcontato form input {
         box-sizing: border-box;
         color: #757575;
@@ -444,7 +448,8 @@ body{
     }
 
     main div.pcontato form {
-        width: 900px;
+        width: 90%;
+        max-width: 900px;
     }
 
 }
