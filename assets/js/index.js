@@ -63,6 +63,8 @@ async function carregar (component, main){
 const processContato = () => {
     const mensagem = document.querySelector("div.pcontato form span");
 
+    const CMain = document.querySelector("body div.container main div.envio");
+
     document.querySelector('div.pcontato form').addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -102,7 +104,11 @@ const processContato = () => {
 
     })
 
-    LoadComments();
+    if(JSON.parse(window.localStorage.getItem("contato")).length == 0){
+        CMain.innerHTML = "Sem envios..."
+    } else {
+        LoadComments();
+    }
 }
 
 const LoadComments = () => {
@@ -129,13 +135,37 @@ const LoadComments = () => {
         mensagem.classList.add("mensagem");
         mensagem.innerText = item.mensagem;
 
+        let exclude = document.createElement("p");
+        exclude.classList.add("exclude");
+        exclude.classList.add("material-symbols-outlined");
+        exclude.innerText = "close"
+        exclude.addEventListener("click", () => removerItem(index));
+
         CItem.appendChild(titulo);
         CItem.appendChild(autor);
         CItem.appendChild(mensagem);
+        CItem.appendChild(exclude);
 
         Cdiv.appendChild(CItem);
     })
 
     CMain.innerHTML = "";
     CMain.appendChild(Cdiv);
+}
+
+const removerItem = (indexf) => {
+    const CArray = JSON.parse(window.localStorage.getItem('contato'));
+
+    const CMain = document.querySelector("body div.container main div.envio");
+
+    const NArray = CArray.filter((item, index) => index != indexf);
+
+    window.localStorage.setItem("contato", JSON.stringify(NArray));
+
+    if(JSON.parse(window.localStorage.getItem("contato")).length == 0){
+        CMain.innerHTML = "Sem envios..."
+    } else {
+        LoadComments();
+    }
+
 }
