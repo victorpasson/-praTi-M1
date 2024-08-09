@@ -399,6 +399,40 @@ body{
         border: none;
         height: 56px;
     }
+
+    main div.CommentClass {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    main div.CommentClass div.CommentItem {
+        background-color: #F1F1F1;
+        margin: 20px;
+        padding: 20px;
+        max-width: 450px;
+        min-width: 250px;
+    }
+
+    main div.CommentClass div.CommentItem h3 {
+        font-size: 26px;
+        margin: 0;
+        padding: 5px 5px 0 5px;
+        letter-spacing: 2px;
+    }
+
+    main div.CommentClass div.CommentItem p.autor {
+        margin: 0 0 0 5px;
+        font-weight: lighter;
+        font-size: 12px;
+    }
+
+    main div.CommentClass div.CommentItem p.mensagem {
+        margin: 20px 5px 0 5px;
+        font-size: 18px;
+    }
 }
 
 @media screen and (min-width: 768px) {

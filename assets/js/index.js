@@ -98,6 +98,44 @@ const processContato = () => {
         assunto.value = "";
         mensagemt.value = "";
 
+        LoadComments();
+
     })
+
+    LoadComments();
 }
 
+const LoadComments = () => {
+    const CMain = document.querySelector("body div.container main div.envio");
+
+    const Cdiv = document.createElement("div");
+    Cdiv.classList.add("CommentClass");
+
+    const CArray = JSON.parse(window.localStorage.getItem('contato'));
+
+    CArray.forEach((item, index) => {
+        const CItem = document.createElement("div");
+        CItem.classList.add("CommentItem");
+        CItem.setAttribute("data-index", index)
+
+        let titulo = document.createElement("h3");
+        titulo.innerText = item.assunto;
+
+        let autor = document.createElement("p");
+        autor.classList.add("autor");
+        autor.innerText = item.nome;
+
+        let mensagem = document.createElement("p");
+        mensagem.classList.add("mensagem");
+        mensagem.innerText = item.mensagem;
+
+        CItem.appendChild(titulo);
+        CItem.appendChild(autor);
+        CItem.appendChild(mensagem);
+
+        Cdiv.appendChild(CItem);
+    })
+
+    CMain.innerHTML = "";
+    CMain.appendChild(Cdiv);
+}
